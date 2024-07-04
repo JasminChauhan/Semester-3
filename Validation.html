@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="username" id="username" placeholder="username"><br /><br />
+        <input type="password" name="password" id="password" placeholder="password"><br /><br />
+        <input type="password" name="repeatpassword" id="rpassword" placeholder="password repeat"><br /><br />
+        <input type="date" name="age" id="age"><br /><br />
+        <input type="text" name="enno" id="en_no" placeholder="ennrollment no"><br /><br />
+        <input type="email" name="email" id="email" placeholder="email"><br /><br />
+        <button onclick=" return checkData()"> Submit </button>
+    </form>
+    <script>
+        function checkData() {
+            let a = document.getElementById("username").value;
+            let b = document.getElementById("password").value;
+            let c = document.getElementById("rpassword").value;
+            let d = document.getElementById("age").value;
+            let e = document.getElementById("en_no").value;
+            let f = document.getElementById("email").value;
+
+            var pattern1 = "^[a-zA-Z]{8,}$";
+            var reg = new RegExp(pattern1);
+            if (reg.test(a)) {
+                alert("valid username");
+            } else {
+                alert("Invalid username");
+            }
+
+            var pattern2 = "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[\\W]){8,12}$";     
+            var reg = new RegExp(pattern2);
+            if (reg.test(b)) {
+                alert("valid password");
+            } else {
+                alert("invalid password");
+            }
+
+
+            if((document.getElementById("password").value) == document.getElementById("rpassword").value){
+                alert("valid password match");
+            } else{
+                alert("invalid password match");
+            }
+
+
+            let age = new Date(document.getElementById("age").value).getFullYear();
+            let currentYear = new Date().getFullYear();
+            let ageDif = currentYear - age;
+            console.log(ageDif);
+            if (ageDif > 18) {
+                alert("valid age");
+            } else {
+                alert("invalid age");
+            }
+
+            return false;
+
+            var pattern4 = "^[0-9]{11}$"
+            var reg = new RegExp(pattern4);
+            if (reg.test(e)) {
+                alert("valid enrollment no");
+            } else {
+                alert("invalid enrollment no");
+            }
+
+            
+            
+            var patetrn5 = "@"
+            var reg = new RegExp(patetrn5);
+            if (reg.test(f)) {
+                alert("valid email");
+            } else {
+                alert("invalid email");
+            }
+
+        }
+    </script>
+</body>
+
+</html>
