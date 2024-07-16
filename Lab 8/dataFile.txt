@@ -1,0 +1,2 @@
+written from fs.write() method
+written from fs.append() method
