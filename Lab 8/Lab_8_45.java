@@ -74,7 +74,7 @@ public class Lab_8_45{
                 return;
             } 
 
-            while(s1.StackPrecedence(stack.peek()) > s1.FunctionPrecedence(next)){
+            while(s1.StackPrecedence(stack.peek()) >= s1.FunctionPrecedence(next)){
                 temp = stack.pop();
                 postfix += temp;
                 rank = rank + s1.Rank(temp);
