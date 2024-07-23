@@ -94,7 +94,7 @@ public class Lab_8_45{
             
         }
 
-        if(!stack.isEmpty() || rank != 1){
+        if(!stack.isEmpty() && rank != 1){
                 System.out.println("invalid");
                 return;
             }
