@@ -1,7 +1,7 @@
 -- LAB :- 6
 
 --Math functions
---Part ñ A:
+--Part ‚Äì A:
 
 --1. Display the result of 5 multiply by 30.
 	SELECT 
@@ -66,38 +66,10 @@
 		RAND() AS RANDOM_NUMBER;
 
 
---PART :- B
-
-	CREATE TABLE EMP_MASTER(
-		EmpNo INT,
-		EmpName VARCHAR(20),
-		JoiningDate DATE,
-		Salary FLOAT,
-		Commission INT,
-		City VARCHAR(20),
-		DeptCode VARCHAR(10)
-	);
-
-	INSERT INTO EMP_MASTER VALUES (101 ,'Keyur', '02-1-5' ,12000.00 ,4500 ,'Rajkot' ,'3@g'),
-								  (102, 'Hardik', '04-2-15', 14000.00, 2500, 'Ahmedabad', '3@'),
-								  (103, 'Kajal', '06-3-14', 15000.00 ,3000, 'Baroda', '3-GD'),
-								  (104, 'Bhoomi', '05-6-23', 12500.00, 1000, 'Ahmedabad', '1A3D'),
-								  (105, 'Harmit', '04-2-15', 14000.00, 2000, 'Rajkot', '312A')
-
-	SELECT * FROM EMP_MASTER
-
---1. Display the result of Salary plus Commission.	
---2. Find smallest integer value that is greater than or equal to 55.2, 35.7 and -55.2.
---3. Find largest integer value that is smaller than or equal to 55.2, 35.7 and -55.2.
---4. Find out remainder of 55 divided 2 and 55 divided by 3.
---5. Find out value of 23 raised to 2nd power and 14 raised 3rd power.
-
-
-
 --String functions
---Part ñ A:
+--Part ‚Äì A:
 
---1. Find the length of following. (I) NULL (II) ë hello í (III) Blank
+--1. Find the length of following. (I) NULL (II) ‚Äò hello ‚Äô (III) Blank
 	SELECT 
 		LEN(NULL) AS NULL_LEN,
 		LEN('HELLO') AS HELLO_LEN,
@@ -116,12 +88,12 @@
 	SELECT
 		SUBSTRING('JASMIN CHAUHAN',3,10) AS SUBSTRING_NAME
 
---5. Write a query to convert ëabc123efgí to ëabcXYZefgí & ëabcabcabcí to ëab5ab5ab5í using REPLACE.
+--5. Write a query to convert ‚Äòabc123efg‚Äô to ‚ÄòabcXYZefg‚Äô & ‚Äòabcabcabc‚Äô to ‚Äòab5ab5ab5‚Äô using REPLACE.
 	SELECT 
 		REPLACE('ABC123EFG','123','XYZ'),
 		REPLACE('ABCABCABC','C','5')
 
---6. Write a query to display ASCII code for ëaí,íAí,ízí,íZí, 0, 9.
+--6. Write a query to display ASCII code for ‚Äòa‚Äô,‚ÄôA‚Äô,‚Äôz‚Äô,‚ÄôZ‚Äô, 0, 9.
 	SELECT
 		ASCII('a'),
 		ASCII('A'),
@@ -139,19 +111,19 @@
 		CHAR(48),
 		CHAR(57)
 
---8. Write a query to remove spaces from left of a given string ëhello world ë.
+--8. Write a query to remove spaces from left of a given string ‚Äòhello world ‚Äò.
 	SELECT
 		LTRIM('HELLO WORLD ') AS LTRIM_WORD
 
---9. Write a query to remove spaces from right of a given string ë hello world ë.
+--9. Write a query to remove spaces from right of a given string ‚Äò hello world ‚Äò.
 	SELECT
 		RTRIM(' HELLO WORLD ') AS RTRIM_WORD
 
---10. Write a query to display first 4 & Last 5 characters of ëSQL Serverí.
+--10. Write a query to display first 4 & Last 5 characters of ‚ÄòSQL Server‚Äô.
 	SELECT
 		LEFT('SQL SERVER',4) + RIGHT('SQL SERVER',5)
 
---11. Write a query to convert a string ë1234.56í to number (Use cast and convert function).
+--11. Write a query to convert a string ‚Äò1234.56‚Äô to number (Use cast and convert function).
 	SELECT 
 		CAST(1234.56 AS INT) AS 'CAST',
 		CONVERT(INT,1234.56) AS 'CONVERT'
@@ -170,7 +142,7 @@
 		CONCAT('JASMIN',' CHAUHAN'),
 		'JASMIN' + ' CHAUHAN'
 
---15. Find reverse of ìDarshanî.
+--15. Find reverse of ‚ÄúDarshan‚Äù.
 	SELECT	
 		REVERSE('DARSHAN') AS 'REVERSE'
 
@@ -180,7 +152,7 @@
 
 
 --Date Functions
---Part ñ A:
+--Part ‚Äì A:
 
 --1. Write a query to display the current date & time. Label the column Today_Date.
 	SELECT
@@ -237,4 +209,7 @@
 	SELECT
 		EOMONTH(GETDATE())
 
---14. Calculate your age in years and months.	SELECT		DATEDIFF(YEAR,'08-08-2006',GETDATE()) AS YEAR_DIFF,		DATEDIFF(MONTH,'08-08-2006',GETDATE()) AS MONTH_DIFF
+--14. Calculate your age in years and months.
+	SELECT
+		DATEDIFF(YEAR,'08-08-2006',GETDATE()) AS YEAR_DIFF,
+		DATEDIFF(MONTH,'08-08-2006',GETDATE()) AS MONTH_DIFF
