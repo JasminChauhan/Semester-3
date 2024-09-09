@@ -43,7 +43,7 @@ VALUES
     ('E06', 'Anjana', 'E04');
 
 
---Part – A:
+--Part â€“ A:
 
 --1. Combine information from student and result table using cross join or Cartesian product.
 	Select * From Stu_Info
@@ -75,14 +75,14 @@ VALUES
 	INNER JOIN Result
 	on Stu_Info.Rno = Result.RNO
 
---7. Display Rno, Name, Branch and SPI of CE branch’s student only.
+--7. Display Rno, Name, Branch and SPI of CE branchâ€™s student only.
 	Select Stu_Info.Rno, Stu_Info.Name, Stu_Info.Branch, Result.SPI
 	From Stu_Info
 	INNER JOIN Result
 	on Stu_Info.Rno = Result.RNO
 	Where Stu_Info.Branch = 'CE'
 
---8. Display Rno, Name, Branch and SPI of other than EC branch’s student only.
+--8. Display Rno, Name, Branch and SPI of other than EC branchâ€™s student only.
 	Select s.Rno, s.Name, s.Branch, r.SPI
 	From Stu_Info s
 	INNER JOIN Result r
@@ -104,7 +104,7 @@ VALUES
 	Group By s.Branch
 	Having s.branch in ('CE','ME')
 
---Part – B:
+--Part â€“ B:
 
 --1. Display average result of each branch and sort them in ascending order by SPI.
 	Select s.Branch, Avg(r.SPI) as Avg
@@ -122,10 +122,10 @@ VALUES
 	Group By s.Branch
 	Order By MAX(r.SPI) DESC 
 
---Part – C:
---1. Retrieve the names of employee along with their manager’s name from the Employee table.
+--Part â€“ C:
+--1. Retrieve the names of employee along with their managerâ€™s name from the Employee table.
 	Select e.Name as Emplyee_name , m.Name as Manager_Name
 	From  EMPLOYEE_MASTER e 
-	INNER JOIN EMPLOYEE_MASTER m
+	LEFT JOIN EMPLOYEE_MASTER m
 	on m.EmployeeNo = e.ManagerNo
 	
