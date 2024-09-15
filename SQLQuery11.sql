@@ -66,22 +66,22 @@ VALUES
 
 --5. Perform the full outer join on Student and Result tables.
 	Select * From Stu_Info
-	RIGHT OUTER JOIN Result
+	FULL OUTER JOIN Result
 	on Stu_Info.Rno = Result.RNO
 
 --6. Display Rno, Name, Branch and SPI of all students.
-	Select Stu_Info.Rno, Stu_Info.Name, Stu_Info.Branch, Result.SPI
-	From Stu_Info
-	INNER JOIN Result
-	on Stu_Info.Rno = Result.RNO
+	Select s.Rno, s.Name, s.Branch, r.SPI
+	From Stu_Info s
+	INNER JOIN Result r
+	on s.Rno = r.RNO
 
 --7. Display Rno, Name, Branch and SPI of CE branch’s student only.
-	Select Stu_Info.Rno, Stu_Info.Name, Stu_Info.Branch, Result.SPI
-	From Stu_Info
-	INNER JOIN Result
-	on Stu_Info.Rno = Result.RNO
-	Where Stu_Info.Branch = 'CE'
-
+	Select s.Rno, s.Name, s.Branch, r.SPI
+	From Stu_Info s
+	INNER JOIN Result r
+	on s.Rno = r.RNO
+	Where s.Branch = 'CE'
+		
 --8. Display Rno, Name, Branch and SPI of other than EC branch’s student only.
 	Select s.Rno, s.Name, s.Branch, r.SPI
 	From Stu_Info s
